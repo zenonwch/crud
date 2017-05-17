@@ -1,0 +1,34 @@
+SHOW DATABASES; # show all existing DB
+
+# CREATE DATABASE crud; # creating new DB with name == crud
+
+# CREATE USER root; # create new user with name == root
+# CREATE USER 'root'@'localhost' IDENTIFIED BY 'pass'; # create new user with name == root and password == pass
+
+# SET PASSWORD FOR 'root' = 'root'; # set pasword for user == root
+
+# SELECT current_user(); # check current user
+
+# GRANT ALL ON crud.* to 'root'; # grant all privileges to user  with name == root
+
+SELECT DATABASE(); # show current database
+
+USE crud; # switch to database with name == crud
+
+SHOW TABLES; # show all existing tables in the current database
+
+# creates new table
+CREATE TABLE Test (
+  id                     INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  name               VARCHAR(25),
+  age                  INT,
+  isAdmin           BIT,
+  createdDate    TIMESTAMP
+);
+
+# DROP TABLE Test # remove existing table
+
+# make column id AUTO_INCREMENT and PRIMARY KEY
+# it's not possible AUTO_INCREMENT for not PRIMARY KEY or UNIQUE KEY
+ALTER TABLE Test
+  MODIFY COLUMN id INT AUTO_INCREMENT PRIMARY KEY
